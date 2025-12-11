@@ -6,7 +6,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-4 md:mb-0">
                         <span className="text-sm text-foreground/60">
-                            &copy; {new Date().getFullYear()} MyWebsite. All rights reserved.
+                            &copy; {new Date().getFullYear()} Lincoln\'s Blog. All rights reserved.
                         </span>
                     </div>
                     <div className="flex space-x-6">

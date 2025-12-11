@@ -1,21 +1,14 @@
 ---
-title: "Hello World: My First Post"
+title: "001. Welcome! My Name is Lincoln"
 date: "2025-12-10"
-description: "This is the first post on my new personal website. I build it using Next.js and Tailwind CSS."
+description: "This is the first post on my new personal website."
 ---
 
-# Hello World
+# Welcome! My Name is Lincoln
 
-Welcome to my new blog! This is a sample post written in Markdown.
+Hello, this is Lincoln, I chose this name as my American name out of admiration for President Lincoln. As a Data Scientist at Amazon, I spend my days analyzing massive datasets to optimize supply chain performance. I have been thinking about building a personal website for a while, and finally decided to do it now. Thanks GenAI, it is relatively easy to build a website now. I will share my thoughts about stock trading, my personal projects, and my thoughts on life.
 
-## Why I built this site
+If you are interested, let's ride the wave together!
 
-I wanted a place to share my thoughts and projects. I chose **Next.js** because it's fast, flexible, and I love React.
+Keep tuned for more updates!
 
-### Tech Stack
-
-- Next.js 15 (App Router)
-- Tailwind CSS v4
-- TypeScript
-
-Stay tuned for more updates!

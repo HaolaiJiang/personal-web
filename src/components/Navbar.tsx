@@ -7,7 +7,7 @@ const Navbar = () => {
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex-shrink-0">
                         <Link href="/" className="text-xl font-bold text-primary group transition-colors">
-                            <span className="group-hover:text-accent">MyWebsite</span>
+                            <span className="group-hover:text-accent">Lincoln\'s Blog</span>
                         </Link>
                     </div>
                     <div className="hidden md:block">
