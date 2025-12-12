@@ -5,7 +5,7 @@ import Link from 'next/link';
 export async function generateStaticParams() {
     const posts = getSortedPostsData();
     return posts.map((post) => ({
-        slug: post.id,
+        slug: post.slug,
     }));
 }
 
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const postData = await getPostData(slug);
     return {
-        title: `${postData.title} | `,
+        title: `${postData.title} | Lincoln's Blog`,
         description: postData.description,
     };
 }
@@ -27,7 +27,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
             <Link href="/blog" className="text-primary hover:text-accent mb-8 inline-flex items-center transition-colors">
                 &larr; Back to blog
             </Link>
-            <article className="prose prose-lg dark:prose-invert prose-primary max-w-none">
+            <article className="prose prose-lg dark:prose-invert prose-invert prose-primary max-w-none">
                 <h1 className="mb-2">{postData.title}</h1>
                 <div className="text-foreground/50 mb-8">{postData.date}</div>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }} />

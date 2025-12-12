@@ -8,10 +8,22 @@ const postsDirectory = path.join(process.cwd(), 'content/posts');
 
 export interface PostData {
     id: string;
+    slug: string;
     date: string;
     title: string;
     description?: string;
+    excerpt?: string;
     contentHtml?: string;
+}
+
+function slugify(text: string): string {
+    return text
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')        // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')    // Remove all non-word chars
+        .replace(/\-\-+/g, '-');     // Replace multiple - with single -
 }
 
 export function getSortedPostsData(): PostData[] {
@@ -32,9 +44,32 @@ export function getSortedPostsData(): PostData[] {
         // Use gray-matter to parse the post metadata section
         const matterResult = matter(fileContents);
 
+        // Generate slug from title, fallback to id
+        const title = matterResult.data.title || id;
+        const slug = slugify(title);
+
+        // Generate excerpt
+        let excerpt = matterResult.data.description;
+        if (!excerpt) {
+            // Generate excerpt from content if description is missing
+            const content = matterResult.content;
+            // Strip markdown basics (very simple approach) and take first few chars
+            // Remove headers
+            const plainText = content.replace(/^#+\s+.*$/gm, '')
+                // Remove bold/italic/links
+                .replace(/[#*`_\[\]]/g, '')
+                // Collapse whitespace
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            excerpt = plainText.substring(0, 160) + (plainText.length > 160 ? '...' : '');
+        }
+
         // Combine the data with the id
         return {
             id,
+            slug,
+            excerpt,
             ...(matterResult.data as { date: string; title: string; description?: string }),
         };
     });
@@ -48,8 +83,15 @@ export function getSortedPostsData(): PostData[] {
     });
 }
 
-export async function getPostData(id: string): Promise<PostData> {
-    const fullPath = path.join(postsDirectory, `${id}.md`);
+export async function getPostData(slug: string): Promise<PostData> {
+    const allPosts = getSortedPostsData();
+    const post = allPosts.find(p => p.slug === slug);
+
+    if (!post) {
+        throw new Error(`Post not found for slug: ${slug}`);
+    }
+
+    const fullPath = path.join(postsDirectory, `${post.id}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use gray-matter to parse the post metadata section
@@ -63,8 +105,7 @@ export async function getPostData(id: string): Promise<PostData> {
 
     // Combine the data with the id and contentHtml
     return {
-        id,
+        ...post,
         contentHtml,
-        ...(matterResult.data as { date: string; title: string; description?: string }),
     };
 }

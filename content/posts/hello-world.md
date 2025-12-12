@@ -1,7 +1,7 @@
 ---
-title: "001. Welcome! My Name is Lincoln"
+title: "Welcome! My Name is Lincoln"
 date: "2025-12-10"
-description: "This is the first post on my new personal website."
+description: "This is the first post on my new personal website. Thank you for reading!"
 ---
 
 # Welcome! My Name is Lincoln

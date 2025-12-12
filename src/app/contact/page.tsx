@@ -18,7 +18,7 @@ export default function Contact() {
                     <div className="space-y-4">
                         <div>
                             <div className="text-sm text-foreground/50 uppercase tracking-wider mb-1">Email</div>
-                            <a  className="text-lg font-medium text-primary hover:text-accent transition-colors">
+                            <a className="text-lg font-medium text-primary hover:text-accent transition-colors">
                                 haolai [at] yandex.com
                             </a>
                         </div>
@@ -26,8 +26,8 @@ export default function Contact() {
                             <div className="text-sm text-foreground/50 uppercase tracking-wider mb-1">Socials</div>
                             <div className="flex space-x-4">
                                 {/* <a href="#" className="text-foreground hover:text-primary transition-colors">Twitter/X</a> */}
-                                <a href="https://github.com/haolaijiang" className="text-foreground hover:text-primary transition-colors">GitHub</a>
-                                <a href="https://www.linkedin.com/in/lincoln-jiang/" className="text-foreground hover:text-primary transition-colors">LinkedIn</a>
+                                <a href="https://github.com/haolaijiang" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">GitHub</a>
+                                <a href="https://www.linkedin.com/in/lincoln-jiang/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">LinkedIn</a>
                             </div>
                         </div>
                     </div>
