@@ -13,6 +13,8 @@ Have you ever put something away "for safe keeping," only to completely forget w
 
 We've all been there. That’s why I built QuickStow—a simple, effective solution to track exactly where you put your stuff.
 
+![QuickStow Comic](/quickstow-intro-comic.png)
+
 ### What is QuickStow? ###
 QuickStow is a lightning-fast web app designed for one thing: saving you from your own memory. Whether it's seasonal gear, important documents, or random spare parts, QuickStow remembers so you don't have to.
 
