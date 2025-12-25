@@ -4,6 +4,11 @@ date: "2025-12-15"
 description: "Never forget where your stuff is stored."
 ---
 
+### New Features Launched ###
+* Added **Show All Items** button to display all items in a list. Never forget what you have stored before.
+* Added **Delete Items** feature to remove items from your list.
+
+
 ### Never Lose Track of Your Stuff Again with QuickStow ###
 Have you ever put something away "for safe keeping," only to completely forget where it is when you actually need it?
 
